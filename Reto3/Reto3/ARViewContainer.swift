@@ -31,6 +31,10 @@ struct ARViewContainer: UIViewRepresentable {
         
         arView.session.run(config)
         arView.addCoaching()
+        arView.isAccessibilityElement = true // El ARView será accesible como un todo.
+        arView.accessibilityLabel = "Augmented Reality View"
+        arView.accessibilityHint = "You can explore 3d models in this ARView."
+               
         return arView
     }
     
@@ -50,14 +54,9 @@ struct ARViewContainer: UIViewRepresentable {
         // add the loaded model to the entity
         anchorEntity.addChild(modelEntity)
         
-        // Set the 'view' property of the coordinator to the 'uiView' passed as an argument.
-        context.coordinator.view = uiView
-
-        // Create a UILongPressGestureRecognizer to detect long-press gestures.
-        let longPressGesture = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLongPress(_:)))
-
-       // Add the UILongPressGestureRecognizer to the 'uiView' for user interaction.
-       uiView.addGestureRecognizer(longPressGesture)
+        modelEntity.isAccessibilityElement = true
+        modelEntity.accessibilityLabelKey = "Modelo 3D: \(modelName)"
+                
         
         // instalar los gestures!
         uiView.installGestures([.all], for: modelEntity as Entity & HasCollision)
@@ -79,32 +78,6 @@ struct ARViewContainer: UIViewRepresentable {
         modelEntity.playAnimation(animationResource)
 */
     }
-    
-    // Creating the Coordinator class GESTURES PERSONALIZADOS
-     class Coordinator: NSObject {
-       var view: ARView?
-         
-         //  funcion para cuando se preciona por mucho tiempo y quita el objeto
-         @objc
-             func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
-                 // Check if there is a view to work with
-                 guard let view = self.view else { return }
-
-                 // Obtain the location of a tap or touch gesture
-                 let tapLocation = recognizer!.location(in: view)
-
-                 // Checking if there's an entity at the tapped location within the view
-                 if let entity = view.entity(at: tapLocation) as? ModelEntity {
-           
-                     // Check if this entity is anchored to an anchor
-                         if let anchorEntity = entity.anchor {
-                             // Remove the model from the scene
-                             anchorEntity.removeFromParent()
-                         }
-                 }
-             }
-         
-     }
 }
 
 extension ARView: ARCoachingOverlayViewDelegate {

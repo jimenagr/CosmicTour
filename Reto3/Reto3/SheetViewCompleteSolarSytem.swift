@@ -21,6 +21,7 @@ struct SheetViewCompleteSolarSytem: View {
         ZStack {
             // Fondo azul oscuro
             ARViewCompleteSystemContainer(timeVelocity: $velocityPercent)
+                .accessibilityLabel("Solar system model")
             
             Color(red: 38/255, green: 50/255, blue: 92/255)
                 .opacity(0.3)
@@ -39,6 +40,10 @@ struct SheetViewCompleteSolarSytem: View {
                 Spacer()
                 Slider(value: $velocityPercent, in: 0.1...3)
                     .frame(width: 400)
+                    .accessibilityLabel("Velocidad")
+                    .accessibilityValue("\(String(format: "%.1f", velocityPercent)) the normal velocity")
+                    .accessibilityHint("Adjust the velocity for faster or slower")
+                
                 Text("Adjust the velocity")
             }
             .padding(.bottom, 50)

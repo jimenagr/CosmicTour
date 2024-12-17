@@ -68,6 +68,7 @@ struct MainView: View {
                             .frame(width: 580, height: 580)
                     }
                     .position(x: 105, y: 740)
+                    .accessibilityLabel(Text("Sun"))
                     
                     Button {
                         print("Mercury button was tapped")
@@ -79,6 +80,7 @@ struct MainView: View {
                             .frame(width: 70, height: 70)
                     }
                     .position(x: 300, y: 450)
+                    .accessibilityLabel(Text("Mercury"))
                     
                     
                     Button {
@@ -92,6 +94,7 @@ struct MainView: View {
                             .frame(width: 120, height: 120)
                     }
                     .position(x: 540, y: 650)
+                    .accessibilityLabel(Text("Venus"))
                     
                     Button {
                         print(" Earth button was tapped")
@@ -103,6 +106,7 @@ struct MainView: View {
                             .frame(width: 140, height: 140)
                     }
                     .position(x: 480, y: 310)
+                    .accessibilityLabel(Text("Earth"))
                     
                     Button {
                         print("Mars button was tapped")
@@ -114,6 +118,7 @@ struct MainView: View {
                             .frame(width: 85, height: 85)
                     }
                     .position(x: 710, y: 420)
+                    .accessibilityLabel(Text("Mars"))
                     
                     Button {
                         print("Jupiter button was tapped")
@@ -125,6 +130,7 @@ struct MainView: View {
                             .frame(width: 185, height: 185)
                     }
                     .position(x: 880, y: 600)
+                    .accessibilityLabel(Text("Jupiter"))
                     
                     Button {
                         print("Saturn button was tapped")
@@ -137,6 +143,7 @@ struct MainView: View {
                             .rotationEffect(.degrees(-20))
                     }
                     .position(x: 840, y: 200)
+                    .accessibilityLabel(Text("Saturn"))
                     
                     Button {
                         print("Uranus button was tapped")
@@ -148,6 +155,7 @@ struct MainView: View {
                             .frame(width: 150, height: 150)
                     }
                     .position(x: 1040, y: 350)
+                    .accessibilityLabel(Text("Uranus"))
                     
                     Button {
                         print("Neptune button was tapped")
@@ -159,11 +167,13 @@ struct MainView: View {
                             .frame(width: 100, height: 100)
                     }
                     .position(x: 1080, y: 150)
+                    .accessibilityLabel(Text("Neptune"))
                     
                     Text("Click on any planet to see it better")
                         .foregroundStyle(Color.white)
                         .bold()
                         .position(x:size, y:800)
+                        .accessibilityLabel(Text("Click on any planet to see it better button"))
                     
                     
                     Button("See the magic happen! 🚀") {
@@ -171,6 +181,8 @@ struct MainView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .position(x: size, y:50)
+                    .accessibilityLabel(Text("Click to see the magic happen!"))
+                    
                 }
                 
                 
