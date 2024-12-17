@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D64827972D11873B008B46FF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64827962D11873B008B46FF /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D63363B12D0758D6008C5050 /* Reto3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reto3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64827962D11873B008B46FF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		D63363A82D0758D6008C5050 = {
 			isa = PBXGroup;
 			children = (
+				D64827962D11873B008B46FF /* Launch Screen.storyboard */,
 				D63363B32D0758D6008C5050 /* Reto3 */,
 				D63363B22D0758D6008C5050 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64827972D11873B008B46FF /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
