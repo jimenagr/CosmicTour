@@ -11,9 +11,9 @@ struct ContentView: View {
     @State private var timeVelocity: Double = 1.0
 
     var body: some View {
-        //MainView()
+        MainView()
         //ARViewCompleteSystemContainer(timeVelocity: $timeVelocity)                
-        SheetViewCompleteSolarSytem()
+        //SheetViewCompleteSolarSytem()
     }
 }
 

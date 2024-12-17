@@ -11,6 +11,7 @@ struct MainView: View {
     let size = (UIScreen.main.bounds.width)/2
     let size_height = (UIScreen.main.bounds.height)
     @State private var readyToNavigate : Bool = false
+    @State private var readyToNavigate2 : Bool = false
     @State private var selectedPlanet = ""
     
     var body: some View {
@@ -163,6 +164,13 @@ struct MainView: View {
                         .foregroundStyle(Color.white)
                         .bold()
                         .position(x:size, y:800)
+                    
+                    
+                    Button("See the magic happen! 🚀") {
+                        readyToNavigate2 = true
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .position(x: size, y:50)
                 }
                 
                 
@@ -171,7 +179,10 @@ struct MainView: View {
             .ignoresSafeArea()
             .navigationDestination(isPresented: $readyToNavigate) {
                 SheetView(isPresented: .constant(true), modelName: selectedPlanet)
-                      }
+            }
+            .navigationDestination(isPresented: $readyToNavigate2) {
+                SheetViewCompleteSolarSytem()
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ struct SheetView: View {
                 .ignoresSafeArea(edges: .all)
             
             // boton para cerrar
-            Button() {
+            /*Button() {
                 isPresented.toggle()
             } label: {
                 Image(systemName: "xmark.circle")
@@ -31,7 +31,7 @@ struct SheetView: View {
                     .background(.ultraThinMaterial)
                     .clipShape(Circle())
             }
-            .padding(24)
+            .padding(24)*/
     }
     }
 }
